@@ -1,0 +1,20 @@
+<div>
+    <h4><b>Share Your Experience</b></h4>
+          
+ <form>
+<p>Username: <input type="text" id="name" placeholder="Enter the name" #newItem [value]="experience.name" (input)="experience.name=$any($event.target).value" /><br>
+<p>Password: <input type="text" id="comments" placeholder="Enter the Comments" #newItem [value]="experience.comments" (input)="experience.comments=$any($event.target).value" /><br>
+<br><br><button style="background-color:blue" (click)="post(newItem.value)">Post</button>
+</form>
+
+<app-display (newItemEvent)="post($event)"></app-display>      
+<div class="row">
+    <div class="col s12 m5">
+      <div class="card-panel teal">
+        <span class="white-text">{{experience.name}}<br>
+        </span>
+        <span class="white-text">{{experience.comments}}<br>
+        </span>
+      </div>
+    </div>
+    </div>
